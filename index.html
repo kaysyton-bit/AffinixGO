@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AffinisGo — Prestadores de Serviço Disponíveis</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <div class="scrim" id="scrim"></div>
+
+    <!-- sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <span class="brand-word">AffinisGo</span>
+        <button class="collapse-toggle" id="collapseToggle" aria-label="Recolher menu">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+      </div>
+
+      <div class="search-block">
+        <label class="search-box">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M17 17l-4-4"/></svg>
+          <input type="text" id="searchInput" placeholder="Buscar serviços ou raio (ex: 5km)…" />
+        </label>
+        <div class="tags-row" id="tagsRow"></div>
+      </div>
+
+      <div class="quick-filters">
+        <span class="quick-filters-title">Filtros rápidos</span>
+        <div class="filter-pills">
+          <button class="filter-pill is-active" data-category="Todos">Todos</button>
+          <button class="filter-pill" data-category="Encanador">Encanador</button>
+          <button class="filter-pill" data-category="Eletricista">Eletricista</button>
+          <button class="filter-pill" data-category="Pintura">Pintura</button>
+          <button class="filter-pill" data-category="TI & Redes">TI &amp; Redes</button>
+          <button class="filter-pill" data-category="Climatização">Climatização</button>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="pages/login.html" class="nav-item is-primary">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 10h9M13 6l4 4-4 4"/><path d="M11 3H4v14h7"/></svg>
+          <span class="sidebar-label">Entrar / Cadastrar-se</span>
+        </a>
+
+        <span class="nav-group-title">Explorar</span>
+        <a href="index.html" class="nav-item is-active">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 17s6-5.1 6-9.7A6 6 0 004 7.3C4 11.9 10 17 10 17z"/><circle cx="10" cy="7.3" r="2"/></svg>
+          <span class="sidebar-label">Prestadores Perto</span>
+        </a>
+        <a href="pages/historico.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.2"/><path d="M10 6v4l3 2"/></svg>
+          <span class="sidebar-label">Histórico de Serviços</span>
+        </a>
+        <a href="pages/mensagens.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h14v9H7l-4 3.2V5z"/></svg>
+          <span class="sidebar-label">Mensagens</span>
+          <span class="nav-badge">3</span>
+        </a>
+        <a href="pages/ajuda.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.2"/><path d="M7.8 7.7a2.2 2.2 0 114 1.3c-.6.6-1.5 1-1.7 1.9"/><circle cx="10" cy="14.1" r="0.4" fill="currentColor"/></svg>
+          <span class="sidebar-label">Ajuda &amp; Suporte</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="footer-hint">AffinisGo conecta você a prestadores de confiança perto de onde você está.</p>
+      </div>
+    </aside>
+
+    <!-- conteudo -->
+    <div>
+      <div class="mobile-topbar">
+        <button id="mobileNavToggle" aria-label="Abrir menu">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        </button>
+        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">AffinisGo</span>
+      </div>
+
+      <main class="main">
+        <div class="content-header">
+          <div>
+            <div class="location-row">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 18s6-5.1 6-9.7A6 6 0 004 8.3C4 12.9 10 18 10 18z"/><circle cx="10" cy="8.3" r="2"/></svg>
+              Belo Horizonte, MG (Aprox. 5km)
+            </div>
+            <h1 class="page-title">Prestadores de <em>Serviço</em> Disponíveis</h1>
+          </div>
+
+          <label class="sort-control">
+            Ordenar por
+            <select id="sortSelect">
+              <option value="proximidade">Mais Próximos</option>
+              <option value="avaliacao">Melhor Avaliados</option>
+              <option value="preco">Menor Preço</option>
+            </select>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6l4 4 4-4"/></svg>
+          </label>
+        </div>
+
+        <div class="provider-list" id="providerList"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

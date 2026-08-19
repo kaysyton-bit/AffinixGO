@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AffinisGo — Mensagens</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <div class="scrim" id="scrim"></div>
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">A</div>
+        <span class="brand-word">AffinisGo</span>
+        <button class="collapse-toggle" id="collapseToggle" aria-label="Recolher menu">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg>
+        </button>
+      </div>
+
+      <div class="search-block">
+        <label class="search-box">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M17 17l-4-4"/></svg>
+          <input type="text" placeholder="Buscar serviços ou raio (ex: 5km)…" />
+        </label>
+        <div class="tags-row"></div>
+      </div>
+
+      <div class="quick-filters">
+        <span class="quick-filters-title">Filtros rápidos</span>
+        <div class="filter-pills">
+          <button class="filter-pill is-active">Todos</button>
+          <button class="filter-pill">Encanador</button>
+          <button class="filter-pill">Eletricista</button>
+          <button class="filter-pill">Pintura</button>
+          <button class="filter-pill">TI &amp; Redes</button>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="login.html" class="nav-item is-primary">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 10h9M13 6l4 4-4 4"/><path d="M11 3H4v14h7"/></svg>
+          <span class="sidebar-label">Entrar / Cadastrar-se</span>
+        </a>
+
+        <span class="nav-group-title">Explorar</span>
+        <a href="../index.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 17s6-5.1 6-9.7A6 6 0 004 7.3C4 11.9 10 17 10 17z"/><circle cx="10" cy="7.3" r="2"/></svg>
+          <span class="sidebar-label">Prestadores Perto</span>
+        </a>
+        <a href="historico.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.2"/><path d="M10 6v4l3 2"/></svg>
+          <span class="sidebar-label">Histórico de Serviços</span>
+        </a>
+        <a href="mensagens.html" class="nav-item is-active">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h14v9H7l-4 3.2V5z"/></svg>
+          <span class="sidebar-label">Mensagens</span>
+          <span class="nav-badge">3</span>
+        </a>
+        <a href="ajuda.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10" cy="10" r="7.2"/><path d="M7.8 7.7a2.2 2.2 0 114 1.3c-.6.6-1.5 1-1.7 1.9"/><circle cx="10" cy="14.1" r="0.4" fill="currentColor"/></svg>
+          <span class="sidebar-label">Ajuda &amp; Suporte</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="footer-hint">AffinisGo conecta você a prestadores de confiança perto de onde você está.</p>
+      </div>
+    </aside>
+
+    <div>
+      <div class="mobile-topbar">
+        <button id="mobileNavToggle" aria-label="Abrir menu">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        </button>
+        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">AffinisGo</span>
+      </div>
+
+      <main class="main">
+        <div class="content-header">
+          <div>
+            <h1 class="page-title">Suas <em>Mensagens</em></h1>
+          </div>
+        </div>
+
+        <div class="panel">
+          <p class="panel-title">Conversas ativas</p>
+          <p class="panel-sub">O chat só é liberado depois que um prestador aceita o seu chamado.</p>
+
+          <div class="message-item">
+            <div class="avatar-frame" style="width:44px;height:44px;">
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
+              </div>
+            </div>
+            <div class="history-main">
+              <div class="history-title">Mariana Souza</div>
+              <div class="history-meta">Consigo ir amanhã às 14h, te aviso quando sair.</div>
+            </div>
+            <span class="history-status">Agora</span>
+          </div>
+
+          <div class="message-item">
+            <div class="avatar-frame" style="width:44px;height:44px;">
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
+              </div>
+            </div>
+            <div class="history-main">
+              <div class="history-title">Fernando Lima</div>
+              <div class="history-meta">Pode mandar uma foto do roteador?</div>
+            </div>
+            <span class="history-status">1h</span>
+          </div>
+
+          <div class="message-item">
+            <div class="avatar-frame" style="width:44px;height:44px;">
+              <div class="avatar-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
+              </div>
+            </div>
+            <div class="history-main">
+              <div class="history-title">Carlos Silva</div>
+              <div class="history-meta">Serviço finalizado, qualquer coisa me chama!</div>
+            </div>
+            <span class="history-status">Ontem</span>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
