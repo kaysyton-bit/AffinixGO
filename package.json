@@ -1,0 +1,15 @@
+{
+  "name": "affinisgo-frontend",
+  "version": "1.0.0",
+  "description": "AffinisGo — front-end (protótipo HTML/CSS/JS, sem build step)",
+  "scripts": {
+    "test": "node tests/core.test.js && node tests/smoke.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "jsdom": "^30.1.1"
+  }
+}

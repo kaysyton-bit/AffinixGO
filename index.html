@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?=v3" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AffinisGo — Prestadores de Serviço Disponíveis</title>
+  <title>AffinisGo Prestadores de Serviço Disponíveis</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <div class="app-shell" id="appShell">
     <div class="scrim" id="scrim"></div>
-
-    <!-- sidebar -->
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-mark">A</div>
-        <span class="brand-word">AffinisGo</span>
+
+        <img class="brand-logo" src="assets/logo.svg" alt="AffinisGo" />
+        <img class="brand-icon" src="assets/logo-mark.svg" alt="AffinisGo" />
         <button class="collapse-toggle" id="collapseToggle" aria-label="Recolher menu">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg>
         </button>
@@ -71,16 +71,37 @@
       </div>
     </aside>
 
-    <!-- conteudo -->
     <div>
       <div class="mobile-topbar">
         <button id="mobileNavToggle" aria-label="Abrir menu">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
         </button>
-        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">AffinisGo</span>
+        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">Affinis<span class="brand-accent">Go</span></span>
       </div>
 
       <main class="main">
+        <div class="finder">
+          <div class="finder-kicker">Encontrar prestador</div>
+          <h1 class="finder-title">O que você precisa resolver <em>hoje</em>?</h1>
+          <div class="finder-row">
+            <label class="finder-field">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M17 17l-4-4"/></svg>
+              <input type="text" id="finderInput" placeholder="Ex: encanador, eletricista, ar-condicionado…" />
+            </label>
+            <label class="finder-field">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10 18s6-5.1 6-9.7A6 6 0 004 8.3C4 12.9 10 18 10 18z"/><circle cx="10" cy="8.3" r="2"/></svg>
+              <select id="finderRadius">
+                <option value="0">Qualquer distância</option>
+                <option value="1">Até 1 km</option>
+                <option value="3">Até 3 km</option>
+                <option value="5" selected>Até 5 km</option>
+                <option value="10">Até 10 km</option>
+              </select>
+            </label>
+            <button class="finder-submit" id="finderSubmit" type="button">Buscar</button>
+          </div>
+        </div>
+
         <div class="content-header">
           <div>
             <div class="location-row">
@@ -106,6 +127,8 @@
     </div>
   </div>
 
+  <script src="js/core.js"></script>
+  <script src="js/api.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

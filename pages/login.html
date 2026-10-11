@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?=v4" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AffinisGo — Entrar ou cadastrar-se</title>
@@ -12,8 +13,7 @@
 
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-mark">A</div>
-        <span class="brand-word">AffinisGo</span>
+        <span class="brand-word">Affinis<span class="brand-accent">Go</span></span>
         <button class="collapse-toggle" id="collapseToggle" aria-label="Recolher menu">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg>
         </button>
@@ -22,19 +22,20 @@
       <div class="search-block">
         <label class="search-box">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M17 17l-4-4"/></svg>
-          <input type="text" placeholder="Buscar serviços ou raio (ex: 5km)…" />
+          <input type="text" id="searchInput" placeholder="Buscar serviços ou raio (ex: 5km)…" />
         </label>
-        <div class="tags-row"></div>
+        <div class="tags-row" id="tagsRow"></div>
       </div>
 
       <div class="quick-filters">
         <span class="quick-filters-title">Filtros rápidos</span>
         <div class="filter-pills">
-          <button class="filter-pill is-active">Todos</button>
-          <button class="filter-pill">Encanador</button>
-          <button class="filter-pill">Eletricista</button>
-          <button class="filter-pill">Pintura</button>
-          <button class="filter-pill">TI &amp; Redes</button>
+          <button class="filter-pill is-active" data-category="Todos">Todos</button>
+          <button class="filter-pill" data-category="Encanador">Encanador</button>
+          <button class="filter-pill" data-category="Eletricista">Eletricista</button>
+          <button class="filter-pill" data-category="Pintura">Pintura</button>
+          <button class="filter-pill" data-category="TI & Redes">TI &amp; Redes</button>
+          <button class="filter-pill" data-category="Climatização">Climatização</button>
         </div>
       </div>
 
@@ -74,7 +75,7 @@
         <button id="mobileNavToggle" aria-label="Abrir menu">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
         </button>
-        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">AffinisGo</span>
+        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">Affinis<span class="brand-accent">Go</span></span>
       </div>
 
       <main class="main">
@@ -86,13 +87,13 @@
 
         <div class="panel">
           <div class="auth-tabs">
-            <button class="auth-tab is-active" type="button">Entrar</button>
-            <button class="auth-tab" type="button">Cadastrar-se</button>
+            <button class="auth-tab is-active" type="button" data-tab="entrar">Entrar</button>
+            <button class="auth-tab" type="button" data-tab="cadastrar">Cadastrar-se</button>
           </div>
 
-          <p class="panel-sub">Acesse para salvar prestadores favoritos, acompanhar chamados em andamento e conversar diretamente pelo chat.</p>
+          <p class="panel-sub" id="authSub">Acesse para salvar prestadores favoritos, acompanhar chamados em andamento e conversar diretamente pelo chat.</p>
 
-          <form class="form-grid" onsubmit="return false;">
+          <form class="form-grid" id="formEntrar" onsubmit="return false;">
             <div class="field full">
               <label for="email">E-mail</label>
               <input id="email" type="email" placeholder="voce@email.com" required />
@@ -105,11 +106,30 @@
               <button class="btn-primary" type="submit">Entrar</button>
             </div>
           </form>
+          <form class="form-grid" id="formCadastrar" onsubmit="return false;" style="display:none;">
+            <div class="field full">
+              <label for="nome">Nome completo</label>
+              <input id="nome" type="text" placeholder="Seu nome" required />
+            </div>
+            <div class="field full">
+              <label for="email-cad">E-mail</label>
+              <input id="email-cad" type="email" placeholder="voce@email.com" required />
+            </div>
+            <div class="field full">
+              <label for="senha-cad">Senha</label>
+              <input id="senha-cad" type="password" placeholder="••••••••" required />
+            </div>
+            <div class="field full">
+              <button class="btn-primary" type="submit">Criar conta</button>
+            </div>
+          </form>
         </div>
       </main>
     </div>
   </div>
 
+  <script src="../js/core.js"></script>
+  <script src="../js/api.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>

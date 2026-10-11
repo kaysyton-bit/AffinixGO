@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?=v2" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AffinisGo — Mensagens</title>
@@ -12,8 +13,7 @@
 
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-mark">A</div>
-        <span class="brand-word">AffinisGo</span>
+        <span class="brand-word">Affinis<span class="brand-accent">Go</span></span>
         <button class="collapse-toggle" id="collapseToggle" aria-label="Recolher menu">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3L5 8l5 5"/></svg>
         </button>
@@ -22,19 +22,20 @@
       <div class="search-block">
         <label class="search-box">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="9" r="6"/><path d="M17 17l-4-4"/></svg>
-          <input type="text" placeholder="Buscar serviços ou raio (ex: 5km)…" />
+          <input type="text" id="searchInput" placeholder="Buscar serviços ou raio (ex: 5km)…" />
         </label>
-        <div class="tags-row"></div>
+        <div class="tags-row" id="tagsRow"></div>
       </div>
 
       <div class="quick-filters">
         <span class="quick-filters-title">Filtros rápidos</span>
         <div class="filter-pills">
-          <button class="filter-pill is-active">Todos</button>
-          <button class="filter-pill">Encanador</button>
-          <button class="filter-pill">Eletricista</button>
-          <button class="filter-pill">Pintura</button>
-          <button class="filter-pill">TI &amp; Redes</button>
+          <button class="filter-pill is-active" data-category="Todos">Todos</button>
+          <button class="filter-pill" data-category="Encanador">Encanador</button>
+          <button class="filter-pill" data-category="Eletricista">Eletricista</button>
+          <button class="filter-pill" data-category="Pintura">Pintura</button>
+          <button class="filter-pill" data-category="TI & Redes">TI &amp; Redes</button>
+          <button class="filter-pill" data-category="Climatização">Climatização</button>
         </div>
       </div>
 
@@ -74,7 +75,7 @@
         <button id="mobileNavToggle" aria-label="Abrir menu">
           <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
         </button>
-        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">AffinisGo</span>
+        <span class="brand-word" style="font-size:17px;opacity:1;animation:none;">Affinis<span class="brand-accent">Go</span></span>
       </div>
 
       <main class="main">
@@ -88,49 +89,14 @@
           <p class="panel-title">Conversas ativas</p>
           <p class="panel-sub">O chat só é liberado depois que um prestador aceita o seu chamado.</p>
 
-          <div class="message-item">
-            <div class="avatar-frame" style="width:44px;height:44px;">
-              <div class="avatar-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
-              </div>
-            </div>
-            <div class="history-main">
-              <div class="history-title">Mariana Souza</div>
-              <div class="history-meta">Consigo ir amanhã às 14h, te aviso quando sair.</div>
-            </div>
-            <span class="history-status">Agora</span>
-          </div>
-
-          <div class="message-item">
-            <div class="avatar-frame" style="width:44px;height:44px;">
-              <div class="avatar-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
-              </div>
-            </div>
-            <div class="history-main">
-              <div class="history-title">Fernando Lima</div>
-              <div class="history-meta">Pode mandar uma foto do roteador?</div>
-            </div>
-            <span class="history-status">1h</span>
-          </div>
-
-          <div class="message-item">
-            <div class="avatar-frame" style="width:44px;height:44px;">
-              <div class="avatar-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
-              </div>
-            </div>
-            <div class="history-main">
-              <div class="history-title">Carlos Silva</div>
-              <div class="history-meta">Serviço finalizado, qualquer coisa me chama!</div>
-            </div>
-            <span class="history-status">Ontem</span>
-          </div>
+          <div id="messageList"></div>
         </div>
       </main>
     </div>
   </div>
 
+  <script src="../js/core.js"></script>
+  <script src="../js/api.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>
