@@ -458,7 +458,7 @@ input {
 }
 
 .nav-item.is-primary {
-  background: var(--bg-elevated);
+  background: 18px;
   border: 1px solid var(--border-soft);
   color: var(--text-white);
   justify-content: center;
